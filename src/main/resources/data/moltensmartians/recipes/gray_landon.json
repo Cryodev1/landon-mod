@@ -1,0 +1,19 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "#",
+        "H"
+    ],
+    "key": {
+        "#": {
+            "item": "moltensmartians:landon_pumpkin"
+        },
+        "H": {
+            "item": "minecraft:hopper"
+        }
+    },
+    "result": {
+        "item": "moltensmartians:gray_landon",
+        "count": 1
+    }
+}

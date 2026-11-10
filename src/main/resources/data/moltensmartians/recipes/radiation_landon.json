@@ -1,0 +1,15 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "moltensmartians:light_blue_landon"
+        },
+        {
+            "item": "moltensmartians:yellow_landon"
+        }
+    ],
+    "result": {
+        "item": "moltensmartians:radiation_landon",
+        "count": 1
+    }
+}

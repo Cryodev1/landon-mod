@@ -1,0 +1,15 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "minecraft:dirt"
+        },
+        {
+            "item": "moltensmartians:yellow_landon"
+        }
+    ],
+    "result": {
+        "item": "minecraft:yellow_dye",
+        "count": 1
+    }
+}

@@ -1,0 +1,6 @@
+{
+	"parent": "block/cube_all",
+	"textures": {
+		"all": "moltensmartians:block/transparent_landon_block"
+	}
+}

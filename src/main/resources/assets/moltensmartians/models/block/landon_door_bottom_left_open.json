@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_bottom_left_open",
+  "textures": {
+    "bottom": "moltensmartians:block/landon_door_bottom",
+    "top": "moltensmartians:block/landon_door_top"
+  }
+}

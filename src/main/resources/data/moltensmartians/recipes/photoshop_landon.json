@@ -1,0 +1,30 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "moltensmartians:landon_pumpkin"
+        },
+        {
+            "item": "moltensmartians:radiation_landon"
+        },
+        {
+            "item": "moltensmartians:light_blue_landon"
+        },
+        {
+            "item": "moltensmartians:blue_landon"
+        },
+        {
+            "item": "moltensmartians:yellow_landon"
+        },
+        {
+            "item": "moltensmartians:starwalker_landon"
+        },
+        {
+            "item": "moltensmartians:purple_landon"
+        }
+    ],
+    "result": {
+        "item": "moltensmartians:photoshop_landon",
+        "count": 1
+    }
+}

@@ -1,0 +1,68 @@
+{
+	"landon": {
+		"subtitle": "muah ha ha",
+		"sounds": [
+			"moltensmartians:landon"
+		]
+	},
+	"evil_landon": {
+		"subtitle": "super scary",
+		"sounds": [
+			"moltensmartians:evil_landon"
+		]
+	},
+	"blue_landon": {
+		"subtitle": "gong",
+		"sounds": [
+			"moltensmartians:blue_landon"
+		]
+	},
+	"yellow_landon": {
+		"subtitle": "hehehehehe",
+		"sounds": [
+			"moltensmartians:yellow_landon"
+		]
+	},
+	"light_blue_landon": {
+		"subtitle": "u fell",
+		"sounds": [
+			"moltensmartians:light_blue_landon"
+		]
+	},
+	"radiation_landon": {
+		"subtitle": "mr stark i dont feel so good",
+		"sounds": [
+			"moltensmartians:radiation_landon"
+		]
+	},
+	"gray_landon": {
+		"subtitle": "nabstablook",
+		"sounds": [
+			"moltensmartians:gray_landon"
+		]
+	},
+	"purple_landon": {
+		"subtitle": "huh",
+		"sounds": [
+			"moltensmartians:purple_landon"
+		]
+	},
+	"starwalker_landon": {
+		"subtitle": "i'm the original landon",
+		"sounds": [
+			"moltensmartians:starwalker_landon"
+		]
+	},
+	"photoshop_landon": {
+		"subtitle": "the 7 human landons",
+		"sounds": [
+			"moltensmartians:photoshop_landon"
+		]
+	},
+	"photonegative_landon": {
+		"subtitle": "ahahmo",
+		"sounds": [
+			"moltensmartians:photonegative_landon"
+		]
+	}
+}

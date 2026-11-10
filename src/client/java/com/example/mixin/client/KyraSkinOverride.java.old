@@ -1,0 +1,72 @@
+package com.example.mixin.client;
+
+import org.jetbrains.annotations.Nullable;
+import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Unique;
+
+import com.example.ExampleMod;
+import com.llamalad7.mixinextras.injector.wrapoperation.Operation;
+import com.llamalad7.mixinextras.injector.wrapoperation.WrapOperation;
+
+import net.minecraft.client.MinecraftClient;
+import net.minecraft.client.model.ModelPart;
+import net.minecraft.client.network.AbstractClientPlayerEntity;
+import net.minecraft.client.render.RenderLayer;
+import net.minecraft.client.render.VertexConsumer;
+import net.minecraft.client.render.VertexConsumerProvider;
+import net.minecraft.client.render.entity.PlayerEntityRenderer;
+import net.minecraft.client.render.entity.model.PlayerEntityModel;
+import net.minecraft.client.util.math.MatrixStack;
+import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.util.Identifier;
+
+import org.spongepowered.asm.mixin.injection.At;
+
+@Mixin({PlayerEntityRenderer.class})
+public abstract class KyraSkinOverride extends KyraOverrideModelLivingEntityRendererMixin<AbstractClientPlayerEntity, PlayerEntityModel<AbstractClientPlayerEntity>> {
+	@WrapOperation(method = {"renderArm"}, at = {@At(value = "INVOKE", target = "Lnet/minecraft/client/network/AbstractClientPlayerEntity;getSkinTexture()Lnet/minecraft/util/Identifier;")})
+	private Identifier moltensmartians$armSkin(AbstractClientPlayerEntity instance, Operation<Identifier> original) {
+	   if(instance.getUuidAsString().equals("a825e802-c625-411c-81aa-c090843f588e")) {
+		   return ExampleMod.id("textures/entity/kyra_skin.png");
+	   }
+	   return (Identifier)original.call(new Object[] { instance });
+	}
+	/*    */ 
+	/*    */   
+	protected boolean moltensmartians$overrideModelRender(@Nullable AbstractClientPlayerEntity player, MatrixStack matrices, int light, int overlay, float red, float green, float blue, float alpha, float yaw, float tickDelta, MatrixStack matrixStack, VertexConsumerProvider vertexConsumerProvider) {
+	  //&& player.getUuidAsString().equals("a825e802-c625-411c-81aa-c090843f588e")
+	  if (player != null) {
+	    boolean showBody = isVisible(player);
+	    boolean translucent = (!showBody && !player.isInvisibleTo((PlayerEntity)(MinecraftClient.getInstance()).player));
+	    boolean showOutline = MinecraftClient.getInstance().hasOutline((Entity)player);
+	    RenderLayer renderLayer = getRenderLayer(player, showBody, translucent, showOutline);
+	    RenderLayer inklingRenderLayer = moltensmartians$getRenderLayer(player, showBody, translucent, showOutline);
+	    if (renderLayer == null || inklingRenderLayer == null) {
+	      return true;
+	    }
+	    VertexConsumer inklingSkinVertices = vertexConsumerProvider.getBuffer(inklingRenderLayer);
+	    ((BipedEntityModelAccessor)getModel()).moltensmartians$getHeadParts()
+	      .forEach(modelPart -> moltensmartians$renderBodyPart(modelPart, matrices, inklingSkinVertices, light, overlay, red, green, blue, alpha));
+	    ((BipedEntityModelAccessor)getModel()).moltensmartians$getBodyParts()
+	      .forEach(modelPart -> moltensmartians$renderBodyPart(modelPart, matrices, inklingSkinVertices, light, overlay, red, green, blue, alpha));
+	    return false;
+	  } 
+	  return true;
+	}   
+    @Unique
+	protected void moltensmartians$renderBodyPart(ModelPart modelPart, MatrixStack matrices, VertexConsumer vertices, int light, int overlay, float red, float green, float blue, float alpha) {
+    	modelPart.render(matrices, vertices, light, overlay, red, green, blue, alpha);
+	}
+	@Unique
+	@Nullable
+	protected RenderLayer moltensmartians$getRenderLayer(AbstractClientPlayerEntity player, boolean showBody, boolean translucent, boolean showOutline) {
+	  Identifier texture = ExampleMod.id("textures/entity/kyra_skin.png");
+	  if (translucent)
+	    return RenderLayer.getItemEntityTranslucentCull(texture); 
+	  if (showBody) {
+		  return getModel().getLayer(texture);
+	  }
+  	  return showOutline ? RenderLayer.getOutline(texture) : null;
+	}
+}

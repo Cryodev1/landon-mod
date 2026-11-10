@@ -1,0 +1,12 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "moltensmartians:landon_pumpkin"
+        }
+    ],
+    "result": {
+        "item": "moltensmartians:throwable_landon",
+        "count": 8
+    }
+}

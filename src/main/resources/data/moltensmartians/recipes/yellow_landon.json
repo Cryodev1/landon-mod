@@ -1,0 +1,9 @@
+{
+    "type": "minecraft:blasting",
+    "ingredient": {
+        "item": "moltensmartians:landon_pumpkin"
+    },
+    "result": "moltensmartians:yellow_landon",
+    "experience": 0.1,
+    "cookingtime": 2
+}

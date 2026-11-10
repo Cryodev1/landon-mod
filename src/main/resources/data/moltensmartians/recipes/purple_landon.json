@@ -1,0 +1,8 @@
+{
+    "type": "minecraft:stonecutting",
+    "ingredient": {
+        "item": "moltensmartians:landon_pumpkin"
+    },
+    "result": "moltensmartians:purple_landon",
+    "count": 1
+}

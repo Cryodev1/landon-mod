@@ -1,0 +1,17 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "###",
+        "# #",
+        "###"
+    ],
+    "key": {
+        "#": {
+            "item": "moltensmartians:landon_pumpkin"
+        }
+    },
+    "result": {
+        "item": "moltensmartians:consumable_landon",
+        "count": 1
+    }
+}
